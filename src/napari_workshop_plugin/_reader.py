@@ -5,10 +5,13 @@ It implements the Reader specification, but your plugin may choose to
 implement multiple readers or even other plugin contributions. see:
 https://napari.org/stable/plugins/guides.html?#readers
 """
+
+from typing import List, Union
+
 import numpy as np
 
 
-def napari_get_reader(path):
+def napari_get_reader(path: Union[str, List[str]]) -> Union[None, callable]:
     """A basic implementation of a Reader contribution.
 
     Parameters
