@@ -47,7 +47,7 @@ def read_numpy_file(path: Union[str, List[str]]) -> List[tuple]:
 
     Parameters
     ----------
-    pth : str or list of str
+    path : str or list of str
         Path to file, or list of paths.
 
     Returns

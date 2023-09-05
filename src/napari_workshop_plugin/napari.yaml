@@ -10,15 +10,17 @@ contributions:
     - id: napari-workshop-plugin.make_widget
       python_name: napari_workshop_plugin._widget:segmentation_widget
       title: Make example Widget
+    - id: napari-workshop-plugin.sample_data
+      python_name: napari_workshop_plugin._sample_data:load_sample_data
+      title: Example data
   readers:
     - command: napari-workshop-plugin.get_reader
       accepts_directories: false
       filename_patterns: ['*.npy']
   sample_data:
-    - key: sample_data
-      display_name: Calcuim imaging data
-      uri: example/sample_data.npy
-      reader_plugin: napari-workshop-plugin
+    - command: napari-workshop-plugin.sample_data
+      key: sample_data
+      display_name: Calcium imaging data
   widgets:
     - command: napari-workshop-plugin.make_widget
       display_name: Segmentation demo widget
