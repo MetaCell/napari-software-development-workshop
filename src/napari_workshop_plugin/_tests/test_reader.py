@@ -6,7 +6,6 @@ from napari_workshop_plugin import napari_get_reader
 # tmp_path is a pytest fixture
 def test_reader(tmp_path):
     """An example of how you might test your plugin."""
-
     # write some fake data using your supported file format
     my_test_file = str(tmp_path / "myfile.npy")
     original_data = np.random.rand(20, 20)

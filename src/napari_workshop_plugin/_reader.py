@@ -1,5 +1,4 @@
-"""
-This module is an example of a barebones numpy reader plugin for napari.
+"""Barebones numpy reader plugin for napari.
 
 It implements the Reader specification, but your plugin may choose to
 implement multiple readers or even other plugin contributions. see:
@@ -12,7 +11,7 @@ import numpy as np
 
 
 def napari_get_reader(path: Union[str, List[str]]) -> Union[None, callable]:
-    """A basic implementation of a Reader contribution.
+    """Reader contribution.
 
     Parameters
     ----------
@@ -48,7 +47,7 @@ def read_numpy_file(path: Union[str, List[str]]) -> List[tuple]:
 
     Parameters
     ----------
-    path : str or list of str
+    pth : str or list of str
         Path to file, or list of paths.
 
     Returns

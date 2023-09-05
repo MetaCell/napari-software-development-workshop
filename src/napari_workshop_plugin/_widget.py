@@ -1,6 +1,4 @@
-"""
-This module provides a widget for segmenting cells from calcium imaging data.
-"""
+"""Provides a widget for segmenting cells from calcium imaging data."""
 from typing import TYPE_CHECKING
 
 import numpy as np
@@ -57,8 +55,7 @@ def segmentation_widget(
     blur_sigma: float = 2.0,
     disk_size: int = 4,
 ):
-    """
-    Segment cells from calcium image max projection.
+    """Segment cells from calcium image max projection.
 
     1. Grayscale and blur the image.
     2. Perform a multiotsu to separate the image into three classes:
