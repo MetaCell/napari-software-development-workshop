@@ -8,4 +8,4 @@ from ._widget import segmentation_widget
 
 # this is the list of things that are imported with
 # from napari_workshop_plugin import *
-__all__ = ("segmentation_widget" "read_numpy_file", "napari_get_reader")
+__all__ = ("segmentation_widget", "read_numpy_file", "napari_get_reader")
