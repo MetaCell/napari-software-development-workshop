@@ -4,7 +4,7 @@ try:
 except ImportError:
     __version__ = "unknown"
 
-from ._reader import read_numpy_file
+from ._reader import read_numpy_file, napari_get_reader
 from ._widget import segmentation_widget
 
 # this is the list of things that are imported with
@@ -12,4 +12,5 @@ from ._widget import segmentation_widget
 __all__ = (
     "segmentation_widget"
     "read_numpy_file",
+    "napari_get_reader"
 )
