@@ -7,44 +7,18 @@ contributions:
     - id: napari-workshop-plugin.get_reader
       python_name: napari_workshop_plugin._reader:napari_get_reader
       title: Open data with Workshop 2023 demo plugin
-    - id: napari-workshop-plugin.write_multiple
-      python_name: napari_workshop_plugin._writer:write_multiple
-      title: Save multi-layer data with Workshop 2023 demo plugin
-    - id: napari-workshop-plugin.write_single_image
-      python_name: napari_workshop_plugin._writer:write_single_image
-      title: Save image data with Workshop 2023 demo plugin
-    - id: napari-workshop-plugin.make_sample_data
-      python_name: napari_workshop_plugin._sample_data:make_sample_data
-      title: Load sample data from Workshop 2023 demo plugin
-    - id: napari-workshop-plugin.make_qwidget
-      python_name: napari_workshop_plugin._widget:ExampleQWidget
-      title: Make example QWidget
-    - id: napari-workshop-plugin.make_magic_widget
-      python_name: napari_workshop_plugin._widget:example_magic_widget
-      title: Make example magic widget
-    - id: napari-workshop-plugin.make_func_widget
-      python_name: napari_workshop_plugin._widget:example_function_widget
-      title: Make example function widget
+    - id: napari-workshop-plugin.make_widget
+      python_name: napari_workshop_plugin._widget:segmentation_widget
+      title: Make example Widget
   readers:
     - command: napari-workshop-plugin.get_reader
       accepts_directories: false
       filename_patterns: ['*.npy']
-  writers:
-    - command: napari-workshop-plugin.write_multiple
-      layer_types: ['image*','labels*']
-      filename_extensions: []
-    - command: napari-workshop-plugin.write_single_image
-      layer_types: ['image']
-      filename_extensions: ['.npy']
   sample_data:
-    - command: napari-workshop-plugin.make_sample_data
-      display_name: Workshop 2023 demo plugin
-      key: unique_id.1
+    - key: sample_data
+      display_name: Calcuim imaging data
+      uri: example/sample_data.npy
+      reader_plugin: napari-workshop-plugin
   widgets:
-    - command: napari-workshop-plugin.make_qwidget
-      display_name: Example QWidget
-    - command: napari-workshop-plugin.make_magic_widget
-      display_name: Example Magic Widget
-    - command: napari-workshop-plugin.make_func_widget
-      autogenerate: true
-      display_name: Example Function Widget
+    - command: napari-workshop-plugin.make_widget
+      display_name: Segmentation demo widget

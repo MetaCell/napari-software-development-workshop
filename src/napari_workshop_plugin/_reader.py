@@ -36,10 +36,10 @@ def napari_get_reader(path: Union[str, List[str]]) -> Union[None, callable]:
         return None
 
     # otherwise we return the *function* that can read ``path``.
-    return reader_function
+    return read_numpy_file
 
 
-def reader_function(path):
+def read_numpy_file(path: Union[str, List[str]]) -> List[tuple]:
     """Take a path or list of paths and return a list of LayerData tuples.
 
     Readers are expected to return data as a list of tuples, where each tuple
