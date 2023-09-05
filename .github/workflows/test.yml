@@ -1,13 +1,15 @@
 # This workflow will run the tests every time you push to the repository or create a pull request.
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#testing-your-code
 
-name: test on multiple platforms
+name: Test on multiple platforms
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches:
+      - main
   pull_request:
-    branches: [ $default-branch ]
+    branches:
+      - main
   # workflow_dispatch allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 

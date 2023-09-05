@@ -1,4 +1,4 @@
-name: upload-docs
+name: Upload docs to GitHub Pages
 
 on:
   push:
