@@ -52,10 +52,8 @@ jobs:
           python -m pip install setuptools tox tox-gh-actions pre-commit
 
       # this runs the pre-commit hooks declared in .pre-commit-config.yaml
-      # it only runs on the files that have changed since the last commit
-      # see https://pre-commit.com/ for more info
       - name: Lint with pre-commit
-        run: pre-commit run --from-ref origin/HEAD --to-ref HEAD
+        run: pre-commit run
 
       # this runs the platform-specific tests declared in tox.ini
       - name: Test with tox
