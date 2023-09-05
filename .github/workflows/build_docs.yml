@@ -21,10 +21,13 @@ jobs:
       - name: Build docs
         run: |
           mkdocs build
-      - name: Deploy docs
-        uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
         with:
-          deploy_key: ${{ secrets.DOCS_DEPLOY_TOKEN }}
-          external_repository: seankmartin/napari-software-development-workshop.github.io
-          publish_dir: ./site
+          name: docs
+          path: site
+      - name: Deploy docs
+        id: deploy
+        uses: actions/deploy-pages@v2
+        
       
