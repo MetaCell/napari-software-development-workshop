@@ -1,0 +1,29 @@
+site_name: Example documentation
+
+theme:
+  name: material
+  palette:
+      primary: blue
+      accent: light blue
+      toggle: indigo
+
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: numpy
+            annotations_path: full
+
+nav:
+  - Home: index.md
+  - About MkDocs: about.md
+  - API Reference: reference.md
+
+extra_css:
+  - css/mkdocstrings.css
+ 
