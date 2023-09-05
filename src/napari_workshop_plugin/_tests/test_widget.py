@@ -1,6 +1,6 @@
 import numpy as np
 
-from napari_workshop_plugin import ExampleQWidget, example_magic_widget
+from napari_workshop_plugin import segmentation_widget
 
 
 # make_napari_viewer is a pytest fixture that returns a napari viewer object
@@ -11,7 +11,7 @@ def test_example_q_widget(make_napari_viewer, capsys):
     viewer.add_image(np.random.random((100, 100)))
 
     # create our widget, passing in the viewer
-    my_widget = ExampleQWidget(viewer)
+    my_widget = segmentation_widget(viewer)
 
     # call our widget method
     my_widget._on_click()
@@ -26,7 +26,7 @@ def test_example_magic_widget(make_napari_viewer, capsys):
     layer = viewer.add_image(np.random.random((100, 100)))
 
     # this time, our widget will be a MagicFactory or FunctionGui instance
-    my_widget = example_magic_widget()
+    my_widget = segmentation_widget()
 
     # if we "call" this object, it'll execute our function
     my_widget(viewer.layers[0])
