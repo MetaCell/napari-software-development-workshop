@@ -1,0 +1,45 @@
+{% set name = "napari-workshop-plugin" %}
+{% set version = "0.0.3" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-workshop-plugin-{{ version }}.tar.gz
+  sha256: 07de050407b2dab5bba5e2a3992a2671313ace8f6d6d45fb51619bcd0eec4ceb
+
+build:
+  skip: true  # [py<39]
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python
+    - setuptools >=42.0.0
+    - wheel
+    - setuptools-scm
+    - pip
+  run:
+    - python
+    - numpy <2,>=1.23
+    - magicgui ==0.7.2  # [py<310]
+    - qtpy ==2.3.1  # [not darwin]
+
+test:
+  imports:
+    - napari_workshop_plugin
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  summary: A plugin to demonstrate some concepts from the 2023 workshop on software development related to napari
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - seankmartin
