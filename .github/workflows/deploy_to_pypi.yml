@@ -25,11 +25,11 @@ jobs:
         run: python -m build
       - name: Publish package
       # Using the exact commit hash here of version v1.8.10
-      # This is to ensure that the secrets.PYPI_API_TOKEN is not exposed
+      # This is to ensure that the secrets.TWINE_API_KEY  is not exposed
         uses: pypa/gh-action-pypi-publish@b7f401de30cb6434a1e19f805ff006643653240e
         with:
           user: __token__
           # This is your pypi API token
           # See https://pypi.org/help/#apitoken
-          # Then set it in your github secrets as PYPI_API_TOKEN
-          password: ${{ secrets.PYPI_API_TOKEN }}
+          # Then set it in your github secrets as TWINE_API_KEY 
+          password: ${{ secrets.TWINE_API_KEY  }}
