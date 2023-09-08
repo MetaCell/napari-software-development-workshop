@@ -12,10 +12,10 @@ contributions:
       title: Open data with Workshop 2023 demo plugin
     - id: napari-workshop-plugin.make_widget
       python_name: napari_workshop_plugin._widget:segmentation_widget
-      title: Make example Widget
+      title: Make example Segmentation Widget
     - id: napari-workshop-plugin.sample_data
       python_name: napari_workshop_plugin._sample_data:load_sample_data
-      title: Example data
+      title: Example data of a calcium imaging max projection
   readers:
     - command: napari-workshop-plugin.get_reader
       accepts_directories: false
