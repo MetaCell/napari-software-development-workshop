@@ -2,6 +2,8 @@ name: napari-workshop-plugin
 display_name: Workshop 2023 demo plugin
 schema_version: 0.2.0
 visibility: public
+# At time of writing, category options are:
+# Acquisition, Annotation, Dataset, Image Processing, IO, Measurement, Segmentation, Simulation, Themes, Transformations, Utilities, Visualization
 categories: [Dataset, Image Processing]
 contributions:
   commands:
