@@ -1,7 +1,8 @@
 name: napari-workshop-plugin
 display_name: Workshop 2023 demo plugin
 schema_version: 0.2.0
-visibility: hidden
+visibility: public
+categories: [Dataset, Image Processing]
 contributions:
   commands:
     - id: napari-workshop-plugin.get_reader
