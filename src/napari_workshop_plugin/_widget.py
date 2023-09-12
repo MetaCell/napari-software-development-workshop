@@ -104,3 +104,5 @@ def segmentation_widget(
     worker = segment(image, blur_sigma, disk_size, classes)
     worker.yielded.connect(display_layer)
     worker.start()
+
+    return worker
