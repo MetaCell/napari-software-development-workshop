@@ -1,7 +1,6 @@
 import numpy as np
 import pytest
-from skimage import filters, morphology
-from .._widget import initial_segment, smooth_labels 
+from .._widget import smooth_labels 
 
 # Fixture to create a mock "napari.types.ImageData" object
 @pytest.fixture
