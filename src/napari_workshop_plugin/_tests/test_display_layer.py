@@ -1,9 +1,7 @@
 import numpy as np
 import pytest
 from .._widget import display_layer
-import time
-import sys
-from skimage import data
+
 
 def test_add_layer(make_napari_viewer, capsys):
     viewer = make_napari_viewer()
