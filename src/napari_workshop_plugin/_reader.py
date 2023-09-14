@@ -10,8 +10,11 @@ from typing import List, Union
 import numpy as np
 
 
-def napari_get_reader(path: Union[str, List[str]]) -> Union[None, callable]:
-    """Reader contribution.
+def napari_get_reader(
+    path: Union[str, List[str]]) -> Union[None, callable]:
+    """Find the reader contribution for a path.
+
+    If path is recognised as a readable extension, return the appropriate function to read from that path.
 
     Parameters
     ----------
@@ -21,8 +24,9 @@ def napari_get_reader(path: Union[str, List[str]]) -> Union[None, callable]:
     Returns
     -------
     function or None
-        If the path is a recognized format, return a function that accepts the
-        same path or list of paths, and returns a list of layer data tuples.
+        If the path is a recognized format,
+        return a function that accepts the same path or
+        list of paths, and returns a list of layer data tuples.
     """
     if isinstance(path, list):
         # reader plugins may be handed single path, or a list of paths.
