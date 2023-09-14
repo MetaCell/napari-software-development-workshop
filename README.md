@@ -1,34 +1,48 @@
-# napari software development workshop 2023
+# napari-workshop-plugin
 
-You can find resources here for the napari software development workshop 2023.
-Here is a template for a README.md file for plugins, which is a good place to start for your own projects.
+[![License MIT](https://img.shields.io/pypi/l/napari-workshop-plugin.svg?color=green)](https://github.com/MetaCell/napari-workshop-plugin/raw/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/napari-workshop-plugin.svg?color=green)](https://pypi.org/project/napari-workshop-plugin)
+[![Python Version](https://img.shields.io/pypi/pyversions/napari-workshop-plugin.svg?color=green)](https://python.org)
+[![tests](https://github.com/seankmartin/napari-software-development-workshop/workflows/tests/badge.svg)](https://github.com/seankmartin/napari-software-development-workshop/actions)
+[![codecov](https://codecov.io/gh/seankmartin/napari-software-development-workshop/branch/main/graph/badge.svg)](https://codecov.io/gh/seankmartin/napari-software-development-workshop)
+[![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-workshop-plugin)](https://napari-hub.org/plugins/napari-workshop-plugin)
 
-# Plugin name
+The purpose of this repository is to provide a template for a napari plugin that can be used as a starting point for the napari software development workshop 2023.
+It should help you to see the basics of building documentation, testing, and continuous integration for a napari plugin.
 
-Optional: Badges, e.g. ![version](https://img.shields.io/badge/version-23_07_24-blue)
+This [napari] plugin was generated with [Cookiecutter] using [@napari]'s [cookiecutter-napari-plugin] template.
+The cookiecutter plugin is also a great jumping off point for your own plugin development.
 
-Introduction paragraph: a brief set of sentences to introduce your project, or even just a one liner.
+## Check out a template you can use for your own README
+
+[template.md](template.md)
+
+<!--
+Don't miss the full getting started guide to set up your new package:
+https://github.com/napari/cookiecutter-napari-plugin#getting-started
+
+and review the napari docs for plugin developers:
+https://napari.org/stable/plugins/index.html
+-->
 
 ## Installation
 
-How to install from PyPI, conda etc.
+You can install `napari-workshop-plugin` via [pip]:
 
-## Usage
-
-How to use the plugin. Screenshots or videos are good at this point.
-
-## Code of conduct / Contributing
-
-How to contribute to this project and any community values.
-
-## Credit
-
-If you like, you can mention some contributors here. A more structured way to do this is via a CITATION.cff file.
+    pip install napari-workshop-plugin
 
 ## License
 
-Which license is used for the project. In this case, the MIT License.
+Distributed under the terms of the [MIT] license,
+"napari-workshop-plugin" is free and open source software
 
 ## Issues
 
-Where can people go for support, should they make an issue here. You could point to the napari image.sc forum, or zulipchat in addition to the GitHub issues for your project.
+If you encounter any problems, please [file an issue] along with a detailed description.
+
+[napari]: https://github.com/napari/napari
+[Cookiecutter]: https://github.com/audreyr/cookiecutter
+[@napari]: https://github.com/napari
+[MIT]: http://opensource.org/licenses/MIT
+[cookiecutter-napari-plugin]: https://github.com/napari/cookiecutter-napari-plugin
+[pip]: https://pypi.org/project/pip/

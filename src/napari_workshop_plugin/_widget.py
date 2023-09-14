@@ -13,12 +13,15 @@ if TYPE_CHECKING:
 
 @thread_worker
 def segment(
-    image: "napari.types.Image", blur_sigma: float = 2.0, disk_size: int = 4
+    image: "napari.types.Image",
+    blur_sigma: float = 2.0,
+    disk_size: int = 4,
+    classes: int = 3,
 ):
     image_data = np.asarray(image.data)
     image_data = blur_and_gray_image(image_data, blur_sigma)
     yield (f"{image.name}_blurred", image_data, True)
-    labels = initial_segment(image_data)
+    labels = initial_segment(image_data, classes)
     yield (f"{image.name}_rough_segmented", labels, False)
     labels = smooth_labels(labels, disk_size)
     yield (f"{image.name}_segmented", labels, False)
@@ -54,6 +57,7 @@ def segmentation_widget(
     image: "napari.layers.Image",
     blur_sigma: float = 2.0,
     disk_size: int = 4,
+    classes: int = 3,
 ):
     """Segment cells from calcium image max projection.
 
@@ -77,6 +81,10 @@ def segmentation_widget(
         The size of the disk in pixels for smoothing.
         A higher disk_size indicates more smoothing.
         By default 4.
+    classes : int, optional
+        The number of classes to segment into.
+        One of the classes will be background.
+        By default 3. Going past 5 classes is not recommended for speed.
 
     """
 
@@ -93,6 +101,8 @@ def segmentation_widget(
                 else viewer.add_labels(data, name=name)
             )
 
-    worker = segment(image, blur_sigma, disk_size)
+    worker = segment(image, blur_sigma, disk_size, classes)
     worker.yielded.connect(display_layer)
     worker.start()
+
+    return worker
