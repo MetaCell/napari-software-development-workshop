@@ -1,4 +1,5 @@
 """Provides a widget for segmenting cells from calcium imaging data."""
+import logging
 from typing import TYPE_CHECKING
 
 import numpy as np
@@ -52,7 +53,7 @@ def smooth_labels(
 
 
 def display_layer(viewer: "napari.Viewer", args) -> None:
-    print(args)
+    logging.debug(args)
     name, data, as_image = args
     if name in viewer.layers:
         show_info(f"Updating {name} with new data")
@@ -101,8 +102,6 @@ def segmentation_widget(
         By default 3. Going past 5 classes is not recommended for speed.
 
     """
-
-    
     def inner_display_layer(args) -> None:
         display_layer(viewer, args)
 
