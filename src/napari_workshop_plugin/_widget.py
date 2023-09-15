@@ -1,4 +1,5 @@
 """Provides a widget for segmenting cells from calcium imaging data."""
+import logging
 from typing import TYPE_CHECKING
 
 import numpy as np
@@ -51,6 +52,20 @@ def smooth_labels(
     return filters.rank.mean(labels, morphology.disk(disk_size))
 
 
+def display_layer(viewer: "napari.Viewer", args) -> None:
+    logging.debug(args)
+    name, data, as_image = args
+    if name in viewer.layers:
+        show_info(f"Updating {name} with new data")
+        viewer.layers[name].data = data
+    else:
+        show_info(f"Adding {name} to viewer")
+        (
+            viewer.add_image(data, name=name)
+            if as_image
+            else viewer.add_labels(data, name=name)
+        )
+
 @magic_factory(persist=True)
 def segmentation_widget(
     viewer: "napari.Viewer",
@@ -87,22 +102,12 @@ def segmentation_widget(
         By default 3. Going past 5 classes is not recommended for speed.
 
     """
+    def inner_display_layer(args) -> None:
+        display_layer(viewer, args)
 
-    def display_layer(args) -> "napari.types.LayerDataTuple":
-        name, data, as_image = args
-        if name in viewer.layers:
-            show_info(f"Updating {name} with new data")
-            viewer.layers[name].data = data
-        else:
-            show_info(f"Adding {name} to viewer")
-            (
-                viewer.add_image(data, name=name)
-                if as_image
-                else viewer.add_labels(data, name=name)
-            )
 
     worker = segment(image, blur_sigma, disk_size, classes)
-    worker.yielded.connect(display_layer)
+    worker.yielded.connect(inner_display_layer)
     worker.start()
 
     return worker
