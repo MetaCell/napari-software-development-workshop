@@ -3,7 +3,7 @@
 [![License MIT](https://img.shields.io/pypi/l/napari-workshop-plugin.svg?color=green)](https://github.com/MetaCell/napari-workshop-plugin/raw/main/LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/napari-workshop-plugin.svg?color=green)](https://pypi.org/project/napari-workshop-plugin)
 [![Python Version](https://img.shields.io/pypi/pyversions/napari-workshop-plugin.svg?color=green)](https://python.org)
-[![tests](https://github.com/seankmartin/napari-software-development-workshop/workflows/tests/badge.svg)](https://github.com/seankmartin/napari-software-development-workshop/actions)
+[![tests](https://github.com/seankmartin/napari-software-development-workshop/actions/workflows/test.yml/badge.svg)](https://github.com/seankmartin/napari-software-development-workshop/actions)
 [![codecov](https://codecov.io/gh/seankmartin/napari-software-development-workshop/branch/main/graph/badge.svg)](https://codecov.io/gh/seankmartin/napari-software-development-workshop)
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-workshop-plugin)](https://napari-hub.org/plugins/napari-workshop-plugin)
 
