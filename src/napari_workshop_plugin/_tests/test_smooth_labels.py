@@ -1,6 +1,8 @@
 import numpy as np
 import pytest
-from .._widget import smooth_labels 
+
+from .._widget import smooth_labels
+
 
 # Fixture to create a mock "napari.types.ImageData" object
 @pytest.fixture
@@ -26,3 +28,5 @@ def test_smooth_labels(mock_napari_labels_data):
     assert isinstance(result, np.ndarray)
     assert result.ndim == 2
     assert mock_napari_labels_data.shape[:2] == result.shape[:2]
+    assert issubclass(result.dtype.type, np.integer)
+    assert result.max() <= mock_napari_labels_data.max()
