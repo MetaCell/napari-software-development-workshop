@@ -32,3 +32,5 @@ The tests in this package are a good jumping off point for your own plugin devel
 ## Other resources
 
 This plugin was generated from the [napari plugin cookiecutter](https://github.com/napari/cookiecutter-napari-plugin). The cookiecutter plugin is also a great jumping off point for your own plugin development. Additionally, some of these concepts are covered in the napari [plugin developer documentation](https://napari.org/dev/plugins/index.html). If you need more support, please reach out on [napari zulip](https://napari.zulipchat.com/), check out the [napari Image.sc](https://forum.image.sc/tag/napari) or [open an issue](https://github.com/napari/napari/issues/new/choose) on the napari repository.
+
+Finally, check out a simple [README template](https://github.com/seankmartin/napari-software-development-workshop/blob/main/template.md) that you can use for your own plugin.
