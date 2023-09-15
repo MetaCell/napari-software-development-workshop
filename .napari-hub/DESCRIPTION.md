@@ -19,7 +19,7 @@ It provides the following features:
 
 ## Widget functionality
 
-[!demo gif of segmentation](https://i.imgur.com/eW4cKsl.gif)
+![demo gif of segmentation](https://i.imgur.com/eW4cKsl.gif)
 
 napari-workshop-plugin provides a widget to demonstrate how segmentation works. The widget takes in a 2D grayscale or RGB image, and proceeds to perform a series of segmentation steps, producing a 2D image or labels layer at each step to visualise how the segmentation algorithm works.
 
